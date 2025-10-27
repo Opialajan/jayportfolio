@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>JAY OPIALA Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#071229;--panel:#0f2540;--muted:#98a8b9;--accent:#00d4c0;--accent2:#ff6b61;--glass:rgba(255,255,255,0.035);--radius:14px;--trans:420ms cubic-bezier(.2,.9,.3,1);--white:#e7f0f6;--skill-track:rgba(255,255,255,0.06)}
+*{box-sizing:border-box}html,body{height:100%}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;background:linear-gradient(180deg,var(--bg) 0%,#041021 100%);color:var(--white);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;line-height:1.45}
+.wrap{max-width:1100px;margin:28px auto;padding:16px;display:grid;grid-template-columns:280px 1fr;gap:18px;align-items:start}
+.sidebar{background:linear-gradient(180deg,var(--panel),rgba(15,37,64,0.88));border-radius:var(--radius);padding:16px;box-shadow:0 10px 35px rgba(0,0,0,0.45);border:1px solid rgba(255,255,255,0.03);display:flex;flex-direction:column;gap:12px}
+.brand{display:flex;gap:12px;align-items:center}
+.avatar{width:86px;height:86px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:22px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#022a28;box-shadow:0 8px 20px rgba(0,0,0,0.45);overflow:visible;animation:avatar-bob 3.6s ease-in-out infinite}
+@keyframes avatar-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.name{font-size:18px;font-weight:700;color:#fbfdfe;margin:0}
+.role{font-size:13px;color:var(--muted);margin-top:4px}
+.contacts{margin-top:4px;display:flex;flex-direction:column;gap:6px}
+.contacts a{color:var(--accent2);text-decoration:none;font-weight:700}
+.tool-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:6px}
+.tool-box{position:relative;display:flex;gap:10px;align-items:center;padding:10px 12px;border-radius:10px;color:var(--white);font-weight:700;font-size:13px;background:linear-gradient(135deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);box-shadow:0 6px 16px rgba(0,0,0,0.28);transition:transform 220ms ease,box-shadow 220ms ease}
+.tool-box:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,0.48)}
+.tool-dot{width:10px;height:10px;border-radius:50%;flex:0 0 auto;box-shadow:0 4px 10px rgba(0,0,0,0.35)}
+.main{display:flex;flex-direction:column;gap:18px}
+.hero{display:flex;gap:18px;align-items:center;padding:20px;border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,0.01),rgba(255,255,255,0));border:1px solid rgba(255,255,255,0.03);box-shadow:0 8px 24px rgba(0,0,0,0.45);overflow:hidden}
+.title{font-size:24px;margin:10px 0 6px 0}
+.subtitle{color:var(--muted);margin:0 0 14px 0}
+.role-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;align-items:center}
+.badge{padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);font-weight:700;font-size:13px;color:var(--white);display:inline-flex;gap:8px;align-items:center;box-shadow:0 6px 16px rgba(0,0,0,0.25);transition:transform 240ms ease}
+.badge:hover{transform:translateY(-6px)}
+.spark{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 6px 12px rgba(0,212,192,0.12);animation:badge-pop 2200ms ease-in-out infinite}
+@keyframes badge-pop{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.cta-row{display:flex;gap:12px;align-items:center}
+.btn{padding:10px 14px;border-radius:10px;border:0;font-weight:700;cursor:pointer;transition:all var(--trans)}
+.btn-primary{background:var(--accent);color:#022}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
+.stat{background:var(--glass);padding:8px 10px;border-radius:10px;font-size:13px;color:var(--muted)}
+.services{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px}
+.service{padding:12px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.01),rgba(255,255,255,0));border:1px solid rgba(255,255,255,0.03);transition:transform var(--trans),box-shadow var(--trans);min-height:110px;display:flex;gap:12px;align-items:flex-start}
+.service:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,0,0,0.45)}
+.icon{width:60px;height:60px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;border-radius:10px;background:linear-gradient(135deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.02)}
+.icon.rotate svg{animation:rotate-anim 2000ms linear infinite;transform-origin:center}
+.icon.bounce{animation:bounce-anim 2200ms ease-in-out infinite}
+.icon.wing svg{animation:wing-anim 1500ms ease-in-out infinite;transform-origin:center}
+@keyframes rotate-anim{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+@keyframes bounce-anim{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes wing-anim{0%{transform:rotate(0)}50%{transform:rotate(8deg)}100%{transform:rotate(0)}}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+.proj{padding:12px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.01),rgba(255,255,255,0));border:1px solid rgba(255,255,255,0.03);transition:transform var(--trans),box-shadow var(--trans);display:flex;flex-direction:column;gap:8px}
+.proj:hover{transform:translateY(-8px);box-shadow:0 22px 50px rgba(0,0,0,0.45)}
+.proj-thumb{height:110px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--muted);font-size:14px;position:relative;overflow:visible}
+.proj-thumb--a{background:linear-gradient(135deg,rgba(0,212,192,0.10),rgba(255,107,97,0.06))}
+.proj-thumb--b{background:linear-gradient(135deg,rgba(128,105,255,0.09),rgba(255,203,107,0.04))}
+.proj-thumb--c{background:linear-gradient(135deg,rgba(77,209,175,0.08),rgba(142,93,253,0.04))}
+.proj-icon{width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:10px;background:rgba(255,255,255,0.02);box-shadow:0 8px 20px rgba(0,0,0,0.24)}
+.proj-icon svg{width:40px;height:40px;display:block;transform-origin:center;animation:proj-rot 4200ms linear infinite,proj-bob 3600ms ease-in-out infinite;filter:drop-shadow(0 6px 18px rgba(0,0,0,0.28))}
+@keyframes proj-rot{0%{transform:rotate(0) scale(1)}50%{transform:rotate(14deg) scale(1.06)}100%{transform:rotate(0) scale(1)}}
+@keyframes proj-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.meta{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:var(--muted)}
+.skills-card{padding:12px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.01),rgba(255,255,255,0));border:1px solid rgba(255,255,255,0.03)}
+.skill-row{display:flex;align-items:center;gap:12px;margin:10px 0}
+.skill-name{width:140px;font-weight:700;font-size:13px;color:var(--white)}
+.skill-track{flex:1;height:12px;border-radius:8px;background:var(--skill-track);overflow:hidden;position:relative}
+.skill-fill{position:absolute;left:0;top=0;bottom:0;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:8px;transition:width 1000ms cubic-bezier(.2,.9,.3,1)}
+skill-percent{width:48px;text-align:right;font-weight:700;font-size:13px;color:var(--muted)}
+.test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:12px}
+.test-card{padding:14px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.01),rgba(255,255,255,0));border:1px solid rgba(255,255,255,0.03);transition:transform var(--trans),box-shadow var(--trans);min-height:120px;display:flex;flex-direction:column;gap:10px}
+.test-card:hover{transform:translateY(-6px);box-shadow:0 28px 60px rgba(0,0,0,0.45)}
+.quote{color:var(--muted);font-size:14px;min-height:60px}
+.client{display:flex;gap:12px;align-items:center}
+.client-badge{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:700;color:#022}
+.card{padding:18px;border-radius:12px;background:linear-gradient(180deg,var(--panel),rgba(10,30,50,0.92));border:1px solid rgba(255,255,255,0.02)}
+.section-title{font-size:12px;color:var(--muted);text-transform:uppercase;margin-bottom:8px}
+.fade{opacity:0;transform:translateY(8px);transition:opacity 560ms var(--trans),transform 560ms var(--trans)}
+.fade.show{opacity:1;transform:none}
+.contact-grid{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.contact-card{min-width:180px;display:flex;gap:12px;align-items:center;padding:12px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.01),rgba(255,255,255,0));border:1px solid rgba(255,255,255,0.03);box-shadow:0 10px 30px rgba(0,0,0,0.35);position:relative;overflow:visible}
+.contact-icon{width:56px;height:56px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01))}
+.contact-illustration{width:120px;height:90px;position:relative;perspective:700px;display:flex;align-items:flex-end;justify-content:center;overflow:visible}
+.boy-wrap{width:120px;height:120px;transform-style:preserve-3d;position:absolute;bottom:-8px;left:0;right:0;margin:auto;will-change:transform;animation:boy-float 4200ms ease-in-out infinite}
+@keyframes boy-float{0%{transform:translateZ(0) rotateX(2deg) rotateY(-2deg) translateY(0)}50%{transform:translateZ(6px) rotateX(-2deg) rotateY(2deg) translateY(-6px)}100%{transform:translateZ(0) rotateX(2deg) rotateY(-2deg) translateY(0)}}
+.boy-feet{position:absolute;left:50%;transform:translateX(-50%);bottom:-26px}
+.phone-ring{position:absolute;top:6px;right:6px;width:18px;height:18px;border-radius:50%;box-shadow:0 0 0 2px rgba(0,212,192,0.08);animation:ring 1600ms ease-in-out infinite;opacity:0.95}
+@keyframes ring{0%{transform:scale(0.9);box-shadow:0 0 0 2px rgba(0,212,192,0.06)}50%{transform:scale(1.12);box-shadow:0 0 0 8px rgba(0,212,192,0.03)}100%{transform:scale(0.9);box-shadow:0 0 0 2px rgba(0,212,192,0.06)}}
+
+/* ---------- MOBILE IMPROVEMENTS: replaces previous media rules ---------- */
+@media (max-width:980px){
+  .wrap{grid-template-columns:1fr;padding:18px;margin:14px auto;gap:14px}
+  .sidebar{order:2;padding:14px}
+  .hero{flex-direction:column;align-items:flex-start;padding:18px}
+  .hero-image{width:120px;height:88px;align-self:center;margin-top:6px}
+  .tool-grid{grid-template-columns:repeat(3,1fr);gap:10px}
+  .proj-thumb{height:86px}
+  .projects{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .role-badges{gap:8px}
+  .badge{padding:8px 12px;font-size:13px}
+  .cta-row{flex-direction:column;align-items:stretch}
+  .btn{width:100%;padding:12px 14px;border-radius:12px}
+  .btn-ghost{margin-top:8px}
+  .stat{width:100%;text-align:left;margin-top:8px}
+  .skill-name{width:120px}
+  .test-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+  .contact-grid{flex-direction:column;gap:12px}
+}
+
+@media (max-width:640px){
+  .tool-grid{grid-template-columns:repeat(3,1fr);gap:8px}
+  .proj-thumb{height:82px}
+  .skill-name{width:110px}
+  .badge{font-size:12px;padding:7px 10px}
+}
+
+@media (max-width:480px){
+  .wrap{padding:12px;gap:12px}
+  .brand{gap:10px;align-items:flex-start}
+  .avatar{width:64px;height:64px;border-radius:12px}
+  .name{font-size:16px}
+  .title{font-size:20px}
+  .hero{padding:14px}
+  .hero-left{width:100%}
+  .hero-image{width:110px;height:70px;align-self:center;margin-top:8px}
+  .tool-grid{grid-template-columns:repeat(2,1fr);gap:8px}
+  .projects{grid-template-columns:1fr;gap:10px}
+  .proj-thumb{height:72px;border-radius:10px}
+  .role-badges{overflow:auto;-webkit-overflow-scrolling:touch;padding-bottom:6px}
+  .role-badges::-webkit-scrollbar{display:none}
+  .cta-row{flex-direction:column;align-items:stretch;gap:10px}
+  .btn{width:100%;padding:12px 14px;font-size:15px;border-radius:12px}
+  .btn-ghost{background:transparent}
+  .service{min-height:auto;padding:10px}
+  .icon{width:54px;height:54px}
+  .proj-icon{width:48px;height:48px}
+  .skill-name{width:100px;font-size:13px}
+  .skill-percent{width:48px;font-size:12px}
+  .quote{font-size:13px;min-height:56px}
+  .contact-card{flex-direction:row;align-items:center;padding:12px}
+  .contact-illustration{width:100px;height:74px}
+  .boy-wrap{transform-origin:center bottom}
+  .proj-icon svg,.avatar,.icon.rotate svg,.icon.bounce,.badge .spark{animation-duration:5200ms}
+  .proj-icon svg{filter:none}
+  footer{padding:14px 6px}
+}
+
+/* Small tweaks to improve tap targets and stacking on phones (non-destructive) */
+@media (max-width:640px){
+  .cta-row { gap:10px; }
+  .contact-card { padding:14px; }
+  .contact-icon { width:60px; height:60px; }
+  .btn { min-height:44px; display:inline-flex; align-items:center; justify-content:center; }
+}
+
+/* keep smallest screens usable */
+@media (max-width:360px){
+  .btn{padding:14px 16px;font-size:16px}
+  .tool-box{padding:12px}
+  .contact-card{padding:14px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <aside class="sidebar fade" id="sidebar">
+    <div class="brand">
+      <div class="avatar" aria-hidden="false" title="Animated avatar" role="img">
+        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <g transform="translate(6,6)">
+            <ellipse cx="46" cy="26" rx="20" ry="18" fill="#f5e6d9"/>
+            <path d="M30 16 C34 6 58 8 62 16 C66 8 78 10 82 18 L78 16 C74 10 66 12 60 14 C54 12 42 12 36 16 Z" fill="#2b2b2b" opacity="0.92"/>
+            <rect x="30" y="20" width="12" height="8" rx="3" stroke="#022a28" stroke-width="1.4" fill="rgba(255,255,255,0.02)"/>
+            <rect x="44" y="20" width="12" height="8" rx="3" stroke="#022a28" stroke-width="1.4" fill="rgba(255,255,255,0.02)"/>
+            <path d="M42 24 H44" stroke="#022a28" stroke-width="1.2"/>
+            <circle cx="36" cy="24" r="1.2" fill="#022a28"/>
+            <circle cx="50" cy="24" r="1.2" fill="#022a28"/>
+            <path d="M46 30 q-2 3 -4 0" stroke="#c8a88e" stroke-width="1.1" fill="none"/>
+            <path d="M38 32 q6 6 14 0" stroke="#d09b80" stroke-width="1.2" fill="none"/>
+            <rect x="20" y="40" width="52" height="26" rx="8" fill="#e9dcd0"/>
+            <g transform="translate(18,46) scale(0.95)">
+              <rect x="6" y="8" width="70" height="40" rx="6" fill="#01202a"/>
+              <rect x="10" y="12" width="62" height="28" rx="4" fill="#052b34"/>
+              <rect class="mini-shine" x="10" y="12" width="18" height="28" rx="4" fill="rgba(255,255,255,0.08)"/>
+              <rect x="0" y="48" width="82" height="6" rx="3" fill="#00161f"/>
+            </g>
+            <g transform="translate(56,56)">
+              <path d="M0 0 C6 6 14 10 24 10" stroke="#f5e6d9" stroke-width="6" stroke-linecap="round" fill="none"/>
+              <circle cx="26" cy="12" r="3.2" fill="#f5e6d9"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <div class="name">JAY OPIALA</div>
+        <div class="role">Web Developer Designer SEO Email Marketing</div>
+      </div>
+    </div>
+
+    <div class="contacts">
+      <div class="contact-line">Phone 09484079800</div>
+      <div class="contact-line">Email <a href="mailto:jhonopiala02@gmail.com">jhonopiala02@gmail.com</a></div>
+    </div>
+
+    <div class="tool-grid" aria-label="Tools and platforms">
+      <div class="tool-box"><div class="tool-dot" style="background:#00d4c0"></div><div class="tool-label">Shopify</div></div>
+      <div class="tool-box"><div class="tool-dot" style="background:#4285f4"></div><div class="tool-label">Wordpress</div></div>
+      <div class="tool-box"><div class="tool-dot" style="background:#6a5aff"></div><div class="tool-label">Webflow</div></div>
+      <div class="tool-box"><div class="tool-dot" style="background:#ff6b61"></div><div class="tool-label">Wixx</div></div>
+      <div class="tool-box"><div class="tool-dot" style="background:#00c5c5"></div><div class="tool-label">Brevo</div></div>
+      <div class="tool-box"><div class="tool-dot" style="background:#00b4ff"></div><div class="tool-label">Klayvio</div></div>
+      <div class="tool-box"><div class="tool-dot" style="background:#ffc84d"></div><div class="tool-label">Mailchimp</div></div>
+      <div class="tool-box"><div class="tool-dot" style="background:#8069ff"></div><div class="tool-label">Canva</div></div>
+      <div class="tool-box"><div class="tool-dot" style="background:#ff64c8"></div><div class="tool-label">Capcut</div></div>
+      <div class="tool-box"><div class="tool-dot" style="background:#32c896"></div><div class="tool-label">Ubersuggest</div></div>
+      <div class="tool-box"><div class="tool-dot" style="background:#008cff"></div><div class="tool-label">Ahrefs</div></div>
+      <div class="tool-box"><div class="tool-dot" style="background:#ff7a43"></div><div class="tool-label">Semrush</div></div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <section class="hero fade" id="hero">
+      <div class="hero-left">
+        <h1 class="title">Hi I am <span style="color:var(--accent)">JAY OPIALA</span></h1>
+        <p class="subtitle">I design and build conversion focused websites and run email campaigns that deliver practical SEO results</p>
+        <div class="cta-row" style="margin-top:8px">
+          <button class="btn btn-primary" id="downloadResume">Download Resume</button>
+          <a class="btn btn-ghost" href="#contact">Contact</a>
+          <div style="margin-left:auto" class="stat">100+ projects</div>
+        </div>
+
+        <div class="role-badges" aria-hidden="false" title="Core roles">
+          <div class="badge"><span class="spark"></span>SEO</div>
+          <div class="badge"><span class="spark" style="background:var(--accent2)"></span>Graphic Designer</div>
+          <div class="badge"><span class="spark" style="background:#ffd166"></span>Web Development</div>
+          <div class="badge"><span class="spark" style="background:#8ecae6"></span>Web Designer</div>
+          <div class="badge"><span class="spark" style="background:#bde0fe"></span>Social Media Manager</div>
+          <div class="badge"><span class="spark" style="background:#7cf7d5"></span>Email Marketing</div>
+        </div>
+      </div>
+
+      <div class="hero-image float" aria-hidden="true" style="width:160px;height:110px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0));display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.03)">
+        <svg viewBox="0 0 200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="abstract shape" style="width:120%;height:120%;opacity:0.12;transform:translateY(-6px) rotate(-8deg)">
+          <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#00d4c0"/><stop offset="1" stop-color="#ff6b61"/></linearGradient></defs>
+          <path d="M0,40 C40,80 80,0 140,30 C180,50 200,90 200,120 L0,120 Z" fill="url(#g)"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="card fade" id="services">
+      <div style="display:flex;align-items:center;justify-content:space-between">
+        <div><div class="section-title">Services</div><h3>How I can help</h3></div>
+        <div style="color:var(--muted)">Custom solutions for each need</div>
+      </div>
+
+      <div class="services" style="margin-top:12px">
+        <div class="service">
+          <div class="icon bounce" aria-hidden="true" title="Website development">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="laptop"><rect x="6" y="10" width="36" height="22" rx="2" fill="#022a28"/><rect x="10" y="14" width="28" height="14" rx="1" fill="#05343a"/><rect x="6" y="34" width="36" height="4" rx="2" fill="#02151a"/></svg>
+          </div>
+          <div><h4>Website development</h4><p>I build responsive accessible and fast websites on Shopify WordPress Webflow and Wix.</p></div>
+        </div>
+
+        <div class="service">
+          <div class="icon rotate" aria-hidden="true" title="Technical SEO">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="gear"><g fill="#06313a"><path d="M24 16a8 8 0 100 16 8 8 0 000-16z"/><path d="M24 6l2 4 3-1 2 3 4 1-1 3 3 2-2 3 2 3-3 2 1 3-4 1-2 3-3-1-2 3-3-1-2-3-4-1 1-3-3-2 2-3-2-3 3-2-1-3 4-1 2-3 3 1 2-4z" fill="#062f35" opacity="0.9"/></g></svg>
+          </div>
+          <div><h4>Technical SEO</h4><p>I perform audits fixes and migrations to help sites rank and keep traffic steady.</p></div>
+        </div>
+
+        <div class="service">
+          <div class="icon wing" aria-hidden="true" title="Email marketing">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="email"><rect x="6" y="12" width="36" height="24" rx="3" fill="#052b34"/><path d="M8 14 L24 26 L40 14" fill="none" stroke="#00d4c0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div><h4>Email marketing</h4><p>I create flows segmentation and campaigns in Brevo Klaviyo and Mailchimp to increase revenue.</p></div>
+        </div>
+
+        <div class="service">
+          <div class="icon bounce" aria-hidden="true" title="Social and content">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="social"><rect x="6" y="28" width="12" height="6" rx="2" fill="#022a28"/><path d="M18 12 L36 18 L36 30 L18 36 L18 12 Z" fill="#05343a"/><circle cx="38" cy="20" r="1.6" fill="#00d4c0"/></svg>
+          </div>
+          <div><h4>Social and content</h4><p>I deliver social media optimization content planning and blog writing that support SEO goals.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card fade" id="projects">
+      <div style="display:flex;align-items:center;justify-content:space-between">
+        <div><div class="section-title">Projects</div><h3>Select highlights</h3></div>
+        <div style="color:var(--muted)">Links available on request</div>
+      </div>
+
+      <div class="projects">
+        <article class="proj">
+          <div class="proj-thumb proj-thumb--a">
+            <div style="display:flex;gap:12px;align-items:center">
+              <div class="proj-icon" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="p1" x1="0" x2="1"><stop offset="0" stop-color="#00d4c0"/><stop offset="1" stop-color="#ff6b61"/></linearGradient></defs><path d="M12 34 C14 24 18 20 28 20 C34 20 36 26 36 34 L12 34 Z" fill="url(#p1)"/></svg></div>
+              <div style="font-weight:700;color:var(--white)">SHOPIFY - Conversion Store</div>
+            </div>
+          </div>
+          <div class="meta"><span style="color:var(--muted)">Ecommerce</span><span class="meta-badge">Shopify</span></div>
+          <h5>Conversion focused store</h5>
+          <p>Custom theme work and checkout improvements that raised conversion and streamlined the customer journey.</p>
+        </article>
+
+        <article class="proj">
+          <div class="proj-thumb proj-thumb--b">
+            <div style="display:flex;gap:12px;align-items:center">
+              <div class="proj-icon" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="p2" x1="0" x2="1"><stop offset="0" stop-color="#8069ff"/><stop offset="1" stop-color="#ffbf6b"/></linearGradient></defs><circle cx="24" cy="22" r="10" fill="url(#p2)"/></svg></div>
+              <div style="font-weight:700;color:var(--white)">WORDPRESS - Lead Site</div>
+            </div>
+          </div>
+          <div class="meta"><span style="color:var(--muted)">Lead generation</span><span class="meta-badge">WordPress</span></div>
+          <h5>Lead generation site</h5>
+          <p>Fast, SEO-ready site with a content pipeline to attract organic users and convert visitors into leads.</p>
+        </article>
+
+        <article class="proj">
+          <div class="proj-thumb proj-thumb--c">
+            <div style="display:flex;gap:12px;align-items:center">
+              <div class="proj-icon" aria-hidden="true"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="p3" x1="0" x2="1"><stop offset="0" stop-color="#4dd1af"/><stop offset="1" stop-color="#8e5dfd"/></linearGradient></defs><rect x="10" y="14" width="28" height="18" rx="4" fill="url(#p3)"/></svg></div>
+              <div style="font-weight:700;color:var(--white)">EMAIL - Revenue Revamp</div>
+            </div>
+          </div>
+          <div class="meta"><span style="color:var(--muted)">Email</span><span class="meta-badge">Klaviyo / Brevo</span></div>
+          <h5>Email revenue revamp</h5>
+          <p>Flow redesign and segmentation that improved open rates and lifted revenue from email marketing.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="card fade" id="skills">
+      <div class="section-title">Skills</div>
+      <h3>Core strengths</h3>
+      <div class="skills-card" id="skillsCard" style="margin-top:10px">
+        <div class="skill-row"><div class="skill-name">Shopify</div><div class="skill-track" data-target="100"><div class="skill-fill" aria-hidden="true"></div></div><div class="skill-percent">100%</div></div>
+        <div class="skill-row"><div class="skill-name">WordPress</div><div class="skill-track" data-target="95"><div class="skill-fill" aria-hidden="true"></div></div><div class="skill-percent">95%</div></div>
+        <div class="skill-row"><div class="skill-name">Webflow</div><div class="skill-track" data-target="90"><div class="skill-fill" aria-hidden="true"></div></div><div class="skill-percent">90%</div></div>
+        <div class="skill-row"><div class="skill-name">Technical SEO</div><div class="skill-track" data-target="92"><div class="skill-fill" aria-hidden="true"></div></div><div class="skill-percent">92%</div></div>
+        <div class="skill-row"><div class="skill-name">Email Marketing</div><div class="skill-track" data-target="94"><div class="skill-fill" aria-hidden="true"></div></div><div class="skill-percent">94%</div></div>
+      </div>
+    </section>
+
+    <section class="card fade" id="testimonials">
+      <div style="display:flex;align-items:center;justify-content:space-between">
+        <div><div class="section-title">Client testimonials</div><h3>Trusted by brands and teams</h3></div>
+        <div style="color:var(--muted)">Short quotes from people I worked with</div>
+      </div>
+
+      <div class="test-grid" role="list" style="margin-top:12px">
+        <article class="test-card" role="listitem"><div class="quote">Working with Jhon was a smooth and positive experience. He helped Healers Petcare present a professional online presence that feels reliable and easy to use.</div><div class="client"><div class="client-badge">T</div><div><strong>Terri</strong><div style="color:var(--muted);font-size:13px">Healers Petcare</div></div></div></article>
+
+        <article class="test-card" role="listitem"><div class="quote">Jhon helped our team with design and SEO work that made our platform clearer and easier to find. Emma and the team appreciated the steady communication and the practical results.</div><div class="client"><div class="client-badge">E</div><div><strong>Emma</strong><div style="color:var(--muted);font-size:13px">Wealth Mentor</div></div></div></article>
+
+        <article class="test-card" role="listitem"><div class="quote">The Hx Skin site gained a cleaner and more modern look. Jhon translated our brand direction into a site that feels elegant and trustworthy.</div><div class="client"><div class="client-badge">H</div><div><strong>Hina</strong><div style="color:var(--muted);font-size:13px">Hx Skin</div></div></div></article>
+
+        <article class="test-card" role="listitem"><div class="quote">Jhon redesigned our site and helped our content reach more people. Benjamin noted a clear improvement in how visitors navigate and read our articles.</div><div class="client"><div class="client-badge">B</div><div><strong>Benjamin</strong><div style="color:var(--muted);font-size:13px">Rewrite Britain</div></div></div></article>
+
+        <article class="test-card" role="listitem"><div class="quote">Darin and the team at Altricity saw a calm and focused approach. Jhon delivered work on time and made the process simple for our stakeholders.</div><div class="client"><div class="client-badge">D</div><div><strong>Darin</strong><div style="color:var(--muted);font-size:13px">Altricity</div></div></div></article>
+
+        <article class="test-card" role="listitem"><div class="quote">Working with Jhon on the Bougie Bottle project was a delight. Juliet said the new site captured our brand mood and helped lift conversions while keeping the design elegant and playful.</div><div class="client"><div class="client-badge">BB</div><div><strong>Juliet</strong><div style="color:var(--muted);font-size:13px">Bougie Bottle</div></div></div></article>
+      </div>
+    </section>
+
+    <section class="card fade" id="contact">
+      <div class="section-title">Contact</div>
+      <h3>Get in touch</h3>
+      <p style="color:var(--muted);margin-top:8px">For opportunities freelance work or a test task please contact me directly</p>
+
+      <div class="contact-grid">
+        <div class="contact-card phone" role="button" aria-label="Call phone">
+          <div class="contact-icon" style="width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:10px;background:linear-gradient(135deg,rgba(255,255,255,0.01),rgba(255,255,255,0.00));overflow:visible;">
+            <svg viewBox="0 0 48 48" width="34" height="34" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="10" y="6" width="28" height="36" rx="6" fill="#052b34"/><rect x="16" y="10" width="16" height="22" rx="2" fill="#022a28"/><path d="M16 32 C18 33 22 34 28 34" stroke="#00d4c0" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+          </div>
+          <div><div style="font-weight:700">Phone</div><div style="color:var(--muted)">09484079800</div></div>
+        </div>
+
+        <div class="contact-card email" role="button" aria-label="Send email" style="padding-right:20px;">
+          <div class="contact-illustration" aria-hidden="true">
+            <div class="phone-ring" aria-hidden="true" style="right:6px;top:6px;"></div>
+            <div class="boy-wrap" role="img" aria-label="3D style illustration of a person on the phone">
+              <svg viewBox="0 0 140 140" width="120" height="120" xmlns="http://www.w3.org/2000/svg" style="display:block;overflow:visible">
+                <ellipse cx="70" cy="110" rx="30" ry="6" fill="rgba(0,0,0,0.18)"/>
+                <g transform="translate(26,18)">
+                  <rect x="28" y="36" width="36" height="42" rx="8" fill="#0b3a3a"/>
+                  <circle cx="46" cy="18" r="14" fill="#f6d9c2"/>
+                  <path d="M36 12 C38 6 54 6 58 12 C64 12 70 14 70 18 C70 22 58 22 58 18 C58 18 48 18 36 18 Z" fill="#2b2b2b"/>
+                  <g transform="translate(58,30) rotate(8)"><rect x="-2" y="0" width="8" height="22" rx="3" fill="#f6d9c2"/><rect x="-10" y="6" width="20" height="12" rx="2" fill="#022a28"/></g>
+                  <g transform="translate(30,76)"><rect x="0" y="0" width="12" height="30" rx="6" fill="#2b2b2b"/><rect x="24" y="0" width="12" height="30" rx="6" fill="#2b2b2b"/></g>
+                  <g class="boy-feet" transform="translate(40,92)"><rect x="-18" y="0" width="26" height="8" rx="4" fill="#8e5dfd"/><rect x="8" y="0" width="26" height="8" rx="4" fill="#00d4c0"/></g>
+                </g>
+              </svg>
+            </div>
+          </div>
+          <div style="margin-left:8px;"><div style="font-weight:700">Email</div><div style="color:var(--muted)"><a href="mailto:jhonopiala02@gmail.com" style="color:var(--accent2);text-decoration:none">jhonopiala02@gmail.com</a></div></div>
+        </div>
+      </div>
+    </section>
+
+    <footer style="text-align:center;color:var(--muted);padding:12px 0">JAY OPIALA Portfolio</footer>
+  </main>
+</div>
+
+<script>
+const fades=document.querySelectorAll('.fade');fades.forEach((el,i)=>setTimeout(()=>el.classList.add('show'),120+i*90));
+/* ---------- only changed this line: open resume in new tab while keeping micro-feedback ---------- */
+const downloadResumeBtn=document.getElementById('downloadResume');if(downloadResumeBtn){downloadResumeBtn.addEventListener('click',()=>{const b=downloadResumeBtn;b.textContent='Opening Resume…';b.style.transform='translateY(-3px)';window.open('Jay Opiala Resume.pdf','_blank','noopener');setTimeout(()=>{b.style.transform='';b.textContent='Download Resume'},900)})}
+(function(){
+  const skillTracks=document.querySelectorAll('.skill-track');if(!skillTracks.length)return;
+  function revealSkill(el){const t=parseInt(el.getAttribute('data-target')||'0',10);const f=el.querySelector('.skill-fill');if(!f)return;requestAnimationFrame(()=>f.style.width=t+'%')}
+  const obs=new IntersectionObserver((entries,o)=>{entries.forEach(e=>{if(e.isIntersecting){revealSkill(e.target);o.unobserve(e.target)}})},{threshold:0.45});
+  skillTracks.forEach(s=>obs.observe(s));
+})();
+(function(){
+  const phoneCard=document.querySelector('.contact-card.phone');const emailCard=document.querySelector('.contact-card.email');
+  if(phoneCard){phoneCard.addEventListener('click',()=>window.location.href='tel:09484079800');phoneCard.addEventListener('keypress',e=>{if(e.key==='Enter')window.location.href='tel:09484079800'})}
+  if(emailCard){emailCard.addEventListener('click',()=>window.location.href='mailto:jhonopiala02@gmail.com');emailCard.addEventListener('keypress',e=>{if(e.key==='Enter')window.location.href='mailto:jhonopiala02@gmail.com'})}
+})();
+</script>
+</body>
+</html>
